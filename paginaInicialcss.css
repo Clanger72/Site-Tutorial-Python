@@ -131,10 +131,10 @@
     color: white;
     position:absolute;
     left: 20%;
-    top: 10%;
+    top: 5%;
 }
 
-#contato h3{
+#contato h6{
     font-family: roboto;
     color: white;
     position:absolute;
@@ -142,7 +142,7 @@
     top: 40%;
 }
 
-#contato h4{
+#contato h7{
     font-family: roboto;
     color: white;
     position:absolute;
@@ -155,16 +155,7 @@
     color: white;
 }
 
-
 img#facebook:hover {
     filter: brightness(120%);
     cursor: pointer;
-}
-
-#fimpg{
-   width: 20%;
-   height: 60%;
-   position: absolute;
-   left: 80%;
-
 }
