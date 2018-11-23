@@ -130,7 +130,7 @@
     font-family: roboto;
     color: white;
     position:absolute;
-    left: 20%;
+    left: 5%;
     top: 5%;
 }
 
@@ -138,7 +138,7 @@
     font-family: roboto;
     color: white;
     position:absolute;
-    left: 20%;
+    left: 5%;
     top: 40%;
 }
 
@@ -146,16 +146,30 @@
     font-family: roboto;
     color: white;
     position:absolute;
-    left: 20%;
+    left: 5%;
     top: 65%;
 }
 
 #contato h5{
     font-family: roboto;
     color: white;
+    position: absolute;
+    left: 79%;
+    top: 10%;
 }
 
-img#facebook:hover {
-    filter: brightness(120%);
-    cursor: pointer;
+#facebook{
+    width: 7%;
+    height: 48%;
+    position: absolute;
+    left: 80%;
+    top: 42%;
+}
+
+#instagram{
+    width: 5%;
+    height: 40%;
+    position: absolute;
+    left: 88%;
+    top: 45%;
 }
