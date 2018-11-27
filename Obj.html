@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <title>Tutorial para aprender a programar em Python </title>
+    <link rel="stylesheet" href="bootstrap.min.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #033076">
+    <h3 class="navbar-brand" href="#">Python</h3>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://docs.python.org/3/" target="_blank">Material Complementar</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://pt.stackoverflow.com/questions/tagged/python" target="_blank">Duvidas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#contato">Contato</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button type="submit" class="btn btn-primary mb-2"style="background-color: #033076">Search</button>
+        </form>
+    </div>
+</nav>
+
+<a href="https://www.python.org/downloads/" target="_blank"></a>
+<img id="primeiraImagem"src="primeiraImagem.jpg" class="img-fluid" alt="Imagem responsiva">
+<div class="container">
+    <div class="row">
+    <div id="titulo">
+            <br>
+            <br>
+            <br>
+        <h1>PROGRAMAÇÃO ORIENTADA A OBJETOS E SOLID</h1>
+        <br>
+       <p>Programação Orientada a Objetos (POO) é um modelo de análise, projeto e desenvolvimento de software baseado na composição e interação entre diversas unidades chamadas de 'objetos' *. Objetos têm atributos e métodos (funções-membro). Esses métodos representam o comportamento do objeto e são responsáveis pela manipulação dos atributos.
+            Tudo em Python é um objeto. Toda instância de classe ou variável tem seu próprio endereço de memória ou identidade.
+            Objetos são representados/descritos/definidos na forma de classes. Uma classe é uma estrutura para representar um objeto e as operações que podem ser executadas no objeto. Uma classe contém a declaração os atributos (variáveis) e os métodos (funções) de um objeto. As classes são como templates., portanto podem ser facilmente reutilizadas.
+            Em Python uma classe é definida usando a palavra-chave class, e a definição de classe geralmente contém definições de métodos e atributos. Cada método deve ter obrigatóriamente o argumento self como seu primeiro argumento. Este argumento é uma auto-referência ao objeto semelhante ao this em outras linguagens.
+            Alguns nomes de método são reservados e têm um significado especial, como por exemplo:</p>
+            <br>
+            <p> * `__init__`: O método que é invocado quando o objeto é criado pela primeira vez
+                    * `__str__`:<br>
+                     O método que é invocado para representar a classe na forma de uma string, como por exemplo, quando impressa</p>
+            <br>
+            <p>Existem muitos mais sobre classes em Python, consulte a documentação. A seguir definiremos nossa primeira classe para representar um ponto em um sistema de coordenadas cartesiana. Variáveis, classes, objetos e todos os elementos que usamos em programação são abstrações que nos ajudam a definir em código coisas ou processos.</p>
+            <br>
+            
+                    <pre>
+                    [] class Ponto:
+                        """
+                        Classe simples para representar um ponto em um sistema de coordenadas cartesianas.
+                        """
+                        
+                        def __init__(self, x, y):
+                            """
+                            Cria um novo Ponto em x, y.
+                            """
+                            self.x = x
+                            self.y = y
+                            
+                        def translate(self, dx, dy):
+                            """
+                            Faz uma translação do ponto por dx e dy no sentido x e y.
+                            """
+                            self.x += dx
+                            self.y += dy
+                            
+                        def __str__(self):
+                            return(f"Ponto em ({self.x}, {self.y})")
+
+                        []ponto1 = Ponto(1, 1)
+                          print(ponto1)
+           </pre>
+                <p>Este ponto conhece sua posição x e x e possuí um método chamado translate(dx, dy) que faz com que o ponto seja movimentado dx no eixo x e dy no eixo y. </p>
+                     <pre>
+                            []ponto1 = Ponto(1, 1)
+                              print(ponto1)
+                         </pre>
+                Agora vamos ver alguns aspectos da programação orientada a objetos<br>
+                <br>
+                <h2>ENCAPSULAMENTO</h2>
+                <p>O encapsulamento indica que o comportamento de um objeto deve permanecer oculto para o mundo externo, ou seja, os objetos mantêm suas informações de estado como privadas.
+                   O mundo externo não pode alterar o estado interno dos objetos atuando diretamente neles. Em vez disso, deve-se mandar uma mensagem para o objeto. Com base no tipo da mensagem enviada os objetos podem responder alterando o seu estado interno.
+                    Em Pyrthon o conceito de encapsulamento não é explícito, pois não existem palavras-chave como public e private como em línguagens no estilo de C++ e Java. Em Python adotamos a convenção de usar o prefixo __ no nome da variável ou função para indicar que ela é privada.
+                    No nosso objeto ponto1, x e y são informações mantidas privadas e a forma ideal de alterar seus valores é chamando o método translate.
+                    </p>
+                <br>
+                <h2>POLIMORFISMO</h2>
+                <p>Polimorfismo refere-se a possibilidade de um objeto fornecer diferentes implementações de métodos de acordo com os parâmetros passados e também pela habilidade de um método ser usado por objetos de tipos diferentes.
+                   Em Python o polimorfismo é um recurso embutido na linguagem. Por exemplo, o operador + pode atuar para realizar a soma de dois inteiros ou para concatenar duas strings. Abaixo mostramos como este operador é abstraído:
+                 <pre>
+                    []  x = 1
+                        y = 2
+                        print(x + y)
+                        print(x.__add__(y))
+                        s1 = "A"
+                        s2 = "B"
+                        print(s1 + s2)
+                        print(s1.__add__(s2))
+                 </pre>
+                <p>Repare que __add__ é um método implementado tanto em strings como em inteiros e é abstraído pelo operador +.
+                  Chamamos isto de syntax sugar, implementações da linguagem escritas para deixar o código mais fácil de ler e usar. Sabendo disso, podemos 
+                  adicionar qualquer tipo de comportamento em uma classe e usar qualquer operador do Python para interagir com ela:</p>  
+                  <pre>
+                [] class Pilha:
+                        def __init__(self):
+                            self.pilha = []
+                            
+                        def __add__(self, valor):
+                            self.pilha.append(valor)
+                            
+                        def __neg__(self):
+                            self.pilha.pop()
+                            
+                        def __str__(self):
+                            values = ', '.join(map(str, self.pilha))
+                            return f"[{values}]"
+
+                        []pilha = Pilha()
+                          pilha + 1
+                          pilha + 2
+                          print(pilha)
+                          -pilha
+                          print(pilha)
+                          -pilha
+                          print(pilha)
+
+                    </pre>
+                <p>Repare que neste caso definimos os métodos __add__ que representa o perador +, o método __neg__ que 
+                    representa o operador - e o método __str__ que retorna uma representação em string do objeto.</p>
+            <br>
+            <h2>HERANÇA</h2>
+            <p>A herança indica que uma classe deriva parte de suas funcionalidades de uma classe base. Usamos a herança para reutilizar funcionalidades definidas na classe base e permite extensões independentes da implementação do software original. A herança cria hierarquias por meio de relacionamentos entre objetos de classes diferentes. Python suporta a herança de múltiplas 
+              classes base simultaneamente. Veja um exemplo abaixo:</p>
+              <pre>
+
+            []  class A:
+                    def metodo_a(self):
+                        print("método de A")
+                
+                class B:
+                    def metodo_b(self):
+                        print("método de B")
+                        
+                class C(A, B):
+                    def metodo_c(self):
+                        print("método de C")
+                        
+                    def metodo_todos(self):
+                        self.metodo_a()
+                        self.metodo_b()
+                        self.metodo_c()
+
+                 []  c = C()
+                        c.metodo_a()
+                        c.metodo_b()
+                        c.metodo_c()
+
+            </pre>
+                <br>
+            <h2>COMPOSIÇÃO</h2>
+            <p>Composição refere-se a capacidade de combinarmos objetos ou classes em estruturas de dados 
+            ou implementações mais complexas. Na composição um objeto é usado para chamar um método de outro objeto.</p>
+             <pre>
+                    [] class D:
+                    def __init__(self):
+                        self.a = A()
+                        self.b = B()
+                
+                    def metodo_d(self):
+                        print("método D")
+                        
+                    def metodo_todos(self):
+                        self.a.metodo_a()
+                        self.b.metodo_b()
+                        self.metodo_d()
+
+                    []d = D()
+                      d.metodo_todos()
+
+             </pre>
+            <h2>DRY - NÃO SE REPITA)</h2>
+            <pre>
+                def equations():<br>
+                def equations():
+                    a = 1 + 2
+                    print(f"[LOG] {a}")
+                
+                    b = 2 ** 2
+                    print(f"[LOG] {b}")
+                
+                    c = 3/4
+                    print(f"[LOG] {c}")
+        </pre>
+            Podemos reescrever como:<br>
+            <pre>
+          []def log(message):
+                 print(f"[LOG] {message}")
+                
+                def equations():
+                    a = 1 + 2
+                    log(a)
+                
+                    b = 2 ** 2
+                    log(b)
+                
+                    c = 3/4
+                    log(c) 
+            </pre>
+            
+            <br>
+            <h2>TELL, DON'T ASK</h2>
+            <p>Deixe que os objetos cuidem de seus próprios dados. Diga (tell) o que eles
+                 tem que fazer ao invés de perguntar (ask) os dados deles.</p>
+          <p>...<br>
+                def calculate(self):<br>
+                    cost = 0<br>
+                    for line_item in self.bill.items:<br>
+                        cost += line_item.cost<br>
+                    ...<br>
+                    <br>
+                Reescrevendo:<br>
+                
+                def  calculate(self):<br>
+                    cost = self.bill.total_cost()<br>
+                </p>
+                <br>
+            <h2>SOLID PRINCIPLES</h2>
+            <p>Na programação orientada a objetos, o termo SOLID é um acrônimo mnemônico para cinco princípios de design destinados a tornar os 
+                projetos de software mais compreensíveis, flexíveis e de fácil manutenção *. Os cinco princípios são:</p>
+                .Single responsibility<br>
+                .Open/closed<br>
+                .Liskov substitution<br>
+                .Interface segregation<br>
+                .Dependency inversion<br>
+                <br>
+                <p>Estes princípios foram introduzidos por Michael Fathers e nomeados por Robert C Martin no início dos anos 2000. Eles visam ajudar os desenvolvedores a construir um código sólido 
+                    orientado a objetos, levando a um sistema de software fácil de manter e estender.</p>
+                    <br>
+                <h4>EXEMPLO</h4>
+                <p>Vamos pegar como exemplo uma implementação inicial e realizar a refatoração de código em etapas para cada um dos princípios.
+                   Supondo que estamos desenvolvendo um sistema para gerenciar uma lavanderia de carros. Quando um carro entra na lavanderia um registro deve ser gerado (require_car_wash). O cliente deve ser notificado quando o serviço terminar (wash_completed). Quando o cliente acessar o sistema devemos mostrar para ele todos os serviços daquele cliente.
+                    Vamos conhecer nossa implementação inicial (meh):</p>
+                    <pre>
+                        [] import uuid
+                            from collections import namedtuple
+
+                        [] def NamedDict(name, dictionary):
+                            return namedtuple(name, dictionary.keys())(*dictionary.values())
+                        
+                        
+                        def Car(dictionary):
+                            return NamedDict("Car", dictionary)
+                        
+                        
+                        def Customer(dictionary):
+                            return NamedDict("Customer", dictionary)
+                        
+                        
+                        class CarWashService:
+                            def __init__(self):
+                                self.persistence = {}
+                            
+                            def send_sms(self, mobile_phone, text):
+                                print(mobile_phone, text)
+                                
+                            def enter_in_the_car_wash(self, car, customer):
+                                job_id = uuid.uuid4().hex
+                                self.persistence[job_id] = (car, customer)
+                                return job_id
+                            
+                            def wash_completed(self, job_id):
+                                car, customer = self.persistence[job_id]
+                                self.send_sms("Enviando mensagem para o número {customer.mobile_phone}:", 
+                                f"Higienização do carro #{car.plate} finalizada.")
+                                  
+                            []  car = Car({ "plate": "ABC1234" })
+                                 customer = Customer({ "mobile_phone": "47 99155-5555" })
+
+                            []  service = CarWashService()
+                                job_id = service.enter_in_the_car_wash(car, customer)
+                                service.wash_completed(job_id)
+                    </pre>
+            <h2>SRP - PRINCÍPIO DA RESPONSABILIDADE ÚNICA</h2>
+            <p>Este princípio determina que cada entidade deve ter responsabilidade sobre uma única parte da funcionalidade fornecida pelo software, e essa responsabilidade deve ser totalmente encapsulada pela entidade. Todos os seus serviços devem estar estreitamente alinhados com essa única responsabilidade.
+               Quando implementamos uma entidade devemos ter em mente que ela deve ser responsável por uma única funcionalidade em particular. Se uma entidade estiver tratando de duas ou mais funcionalidades, é melhor dividir elas em duas ou mais novas entidades. O princípio refere-se à funcionalidade como motivo para mudança da entidade.
+               </p> 
+               As vantagens deste princípio são:<br>
+              . Sempre que houver uma mudança em uma funcionalidade, essa classe em particular deverá ser alterada, e nada mais<br>
+              . Se uma classe tiver várias funcionalidades, as classes dependentes deverão passar por mudanças. Ao seguir o princípio da responsabilidade única este impacto é reduzido e pode até ser evitado<br>
+              <br><p>A razão pela qual é importante manter uma classe focada em uma única responsabilidade é que ela torna a classe mais robusta. Se houver uma alteração no processo de compilação de uma classe, há um risco maior de que o código dependente seja quebrado se usar parte dessa classe.</p>
+              <br>
+              Esta classe implementa algumas resposabilidades:<br>
+              . O serviço de lavanderia<br>
+              . O sistema de persistência de dados<br>
+              . O sistema de envio de SMS<br>
+              <br>
+              <pre>
+                [] class Notifier:
+                    def send(self, phone_number, message):
+                        print(f"Enviando mensagem para o número {phone_number}:", message)
+                
+                        
+                class Repository:
+                    def __init__(self):
+                        self.persistence = {}
+                        
+                    def put(self, item):
+                        self.persistence[item.id] = item
+                        return item.id
+                
+                    def find_by_id(self, id):
+                        return self.persistence[id]
+                    
+                    
+                class CarWashJob:
+                    def __init__(self, car, customer):
+                        self.id = uuid.uuid4().hex
+                        self.car = car
+                        self.customer = customer
+                   
+                
+                class CarWashService:
+                    def __init__(self):
+                        self.repository = Repository()
+                        
+                    def enter_in_the_car_wash(self, car, customer):
+                        job = CarWashJob(car, customer)
+                        job_id = self.repository.put(job)
+                        return job_id
+                        
+                    def wash_completed(self, job_id):
+                        job = self.repository.find_by_id(job_id)
+                        Notifier().send(job.customer.mobile_phone, f"Higienização do carro #{job.car.plate} finalizada.")
+                        
+                    def service_by_customer(self, customer):
+                        return self.repository.find_by_customer(customer)
+
+                       [] car = Car({ "plate": "ABC1234" })
+                        customer = Customer({ "mobile_phone": "47 99155-5555" })
+
+                                service = CarWashService()
+                            
+                       []    job_id = service.enter_in_the_car_wash(car, customer)
+                             service.wash_completed(job_id)
+                     </pre>
+                     <br>
+        <p>Repare que agora temos 3 novas entidades usadas pela classe CarWashService: Notifier, Repository e CarWashJob. Cada uma dessas entidades é responsável por uma única funcionadidade. Desta forma, quando precisarmos alterar o comportamento de notificação, por exemplo, para enviar um e-mail ao invés de um SMS, não precisaremos modificar o serviço CarWashService. Esta separação de 
+          responsabilidades também facilita que o código seja testado e reaproveitado em outros lugares do sistema.</p>
+     
+    
+     <br>
+     <h2>DIP - PRINCÍPIO DA INVERSÃO DE DEPENDÊNCIA</h2>
+     <p>O princípio de inversão de dependência refere-se a uma forma de desacoplamento de entidades. Ao seguir esse princípio, as relações de dependência estabelecidas entre as entidades são invertidas, portanto, abstraíndo das entidades de alto nível 
+         os detalhes de implementação das entidades de baixo nível. O princípio afirma:</p>
+        . Os módulos de alto nível não devem depender de módulos de baixo nível. Ambos devem depender de abstrações<br>
+        . Abstrações não devem depender de detalhes. Detalhes devem depender de abstrações<br>
+        <br>
+        <p>Ditando que objetos de alto e baixo nível devem depender da mesma abstração, este princípio de design inverte a
+         maneira como algumas pessoas podem pensar sobre programação orientada a objetos. A ideia por trás dos dois pontos deste princípio é que ao projetar a interação entre uma entidade de alto nível e uma de baixo nível, a interação deve ser pensada como uma interação abstrata entre elas. Isso não só tem implicações no design da entidade de alto nível, mas também na de baixo nível: a de baixo nível deve ser projetada com a interação em mente e pode ser necessário alterar sua interface de uso.
+          No design convencional, as entidades de baixo nível (Utility Layer) são projetados para serem consumidos por entidades de alto nível (Policy Layer) que permitem a construção de sistemas mais complexos. Nesta composição, as entidades de alto nível dependem diretamente dos componentes de baixo nível para realizar alguma tarefa. Essa dependência das entidades de baixo nível limita as oportunidades de reutilização das entidades de alto nível.</p>
+          <pre>
+        [ ] class CarWashService:
+            def __init__(self, repository, notifier):
+                self.repository = repository
+                self.notifier = notifier
+                
+            def enter_in_the_car_wash(self, car, customer):
+                job = CarWashJob(car, customer)
+                job_id = self.repository.put(job)
+                return job_id
+                
+            def wash_completed(self, job_id):
+                job = self.repository.find_by_id(job_id)
+                self.notifier.send(job.customer.mobile_phone, f"Higienização do carro #{job.car.plate} finalizada.")
+                
+            def service_by_customer(self, customer):
+                return self.repository.find_by_customer(customer)
+
+                car = Car({ "plate": "ABC1234" })
+                customer = Customer({ "mobile_phone": "47 99155-5555" })
+                
+            [] repository = Repository()
+                notifier = Notifier()
+                service = CarWashService(repository, notifier)
+
+            [] job_id = service.enter_in_the_car_wash(car, customer)
+                 service.wash_completed(job_id)
+
+
+          </pre>
+        <h2>DIP - PRINCÍPIO DA INVERSÃO DE DEPENDÊNCIA</h2>
+        <p>
+                O princípio de inversão de dependência refere-se a uma forma de desacoplamento de entidades. Ao seguir esse princípio, as relações 
+                de dependência estabelecidas entre as entidades são invertidas, portanto, abstraíndo das entidades de alto nível os detalhes de implementação das entidades de baixo nível. O princípio afirma:
+        </p>
+       . Os módulos de alto nível não devem depender de módulos de baixo nível. Ambos devem depender de abstrações<br>
+       . Abstrações não devem depender de detalhes. Detalhes devem depender de abstrações<br>
+       <br>
+       <p> Ditando que objetos de alto e baixo nível devem depender da mesma abstração, este princípio de design inverte a maneira como algumas pessoas podem pensar sobre programação orientada a objetos. A ideia por trás dos dois pontos 
+           deste princípio é que ao projetar a interação entre uma entidade de alto nível e uma de baixo nível, a interação deve ser pensada como uma interação abstrata entre elas. Isso não só tem implicações no design da entidade de alto nível, mas também na de baixo nível: a de baixo nível deve ser projetada com a interação em mente e pode ser necessário alterar sua interface de uso.
+            No design convencional, as entidades de baixo nível (Utility Layer) são projetados para serem consumidos por entidades de alto nível (Policy Layer) que permitem a construção de sistemas mais complexos. Nesta composição, as entidades de alto nível dependem diretamente dos componentes de baixo nível para realizar alguma tarefa. Essa dependência das entidades de baixo nível limita as oportunidades de reutilização das entidades de alto nível.</p>
+        <pre>
+                [] class CarWashService:
+                def __init__(self, repository, notifier):
+                    self.repository = repository
+                    self.notifier = notifier
+                    
+                def enter_in_the_car_wash(self, car, customer):
+                    job = CarWashJob(car, customer)
+                    job_id = self.repository.put(job)
+                    return job_id
+                    
+                def wash_completed(self, job_id):
+                    job = self.repository.find_by_id(job_id)
+                    self.notifier.send(job.customer.mobile_phone, f"Higienização do carro #{job.car.plate} finalizada.")
+                    
+                def service_by_customer(self, customer):
+                    return self.repository.find_by_customer(customer)
+
+                []car = Car({ "plate": "ABC1234" })
+                 customer = Customer({ "mobile_phone": "47 99155-5555" })
+               
+                repository = Repository()
+                notifier = Notifier()
+                service = CarWashService(repository, notifier)
+        </pre>
+        <h2> PRINCÍPIO DO ABERTO/FECHADO</h2>
+        <p>Este princípio determina que entidades (classes, objetos, métodos, módudos, etc) devem ser abertas para extensão, mas fechados para modificação. Estas entidades podem permitir que seu comportamento seja estendido sem modificar seu código fonte.
+         Ao implementar uma entidade, devemos garantir que escreveremos código de forma genérica, de modo que, sempre que sentirmos necessidade de estender o comportamento da entidade não precisamos anterar seu código interno. Em vez disso, podemos implementar uma extensão simples da classe que ajudará a implementar o novo comportamento.</p>
+        <p>As vantagens deste princípio são:</p>
+        . As entidades existentes são pouco alteradas e, desse modo, as chances de regressão (bugs, erros) são menores<br>
+        . Ajuda a manter a compatibilidade com versões de código anteriores<br>
+        <p>Uma entidade será considerada aberta se ainda estiver disponível para extensão. Por exemplo, deve ser possível adicionar campos às estruturas de dados que ela contém ou novos elementos ao conjunto de funções que ela executa. Uma entidade será dita fechada se estiver disponível para uso por outras entidades. Isso pressupõe que a entidade recebeu uma descrição estável e bem definida.
+          Uma classe é fechada, pois pode ser compilada, armazenada em uma biblioteca e usada por classes clientes. Mas também é aberta, já que qualquer nova classe pode usá-la com herença, adicionando novos recursos. Quando uma classe descendente é definida, não há necessidade de alterar o original ou perturbar seus clientes.</p>
+         <br>
+         <p>Vamos ao nosso exemplo. Podemos implementar interfaces de repositório para o serviço para guardar dados em memória ou então guardar em um banco de dados. Podemos implementar interfaces de noficicações para enviar SMS ou então e-mail, ou mesmo para múltiplos canais.</p>
+        <pre>
+
+        [] lass JobRepository(dict):
+                pass
+            
+            class InMemoryJobRepository(JobRepository):
+                def put(self, job):
+                    self[job.id] = job
+                    return job.id
+                
+                def find_by_id(self, job_id):
+                    return self[job_id]
+                
+                def find_by_customer(self, customer):
+                    return [job for job in self.values() if job.has_customer(customer)]
+                
+             
+            class JobNotifier:
+                def send(self, to, message):
+                    raise NotImplementedError()
+                    
+            
+            class SMSJobNotifier(JobNotifier):
+                def send(self, phone_number, message):
+                    print(f"Enviando mensagem de texto para o número {phone_number}:", message)
+                    
+            
+            class EmailJobNotifier(JobNotifier):
+                def send(self, email, message):
+                    print(f"Enviando mensagem para o e-mail {email}:", message)
+                    
+            
+            class CarWashJob:
+                def __init__(self, car, customer):
+                    self.id = uuid.uuid4().hex
+                    self.car = car
+                    self.customer = customer
+                    
+                def has_customer(self, customer):
+                    self.customer == customer
+            
+            
+            class CarWashService:
+                def __init__(self, repository, notifier):
+                    self.repository = repository
+                    self.notifier = notifier
+                    
+                def enter_in_the_car_wash(self, car, customer):
+                    job = CarWashJob(car, customer)
+                    job_id = self.repository.put(job)
+                    return job_id
+                    
+                def wash_completed(self, job_id):
+                    job = self.repository.find_by_id(job_id)
+                    self.notifier.send(job.customer.mobile_phone, f"Higienização do carro #{job.car.plate} finalizada.")
+                    
+                def service_by_customer(self, customer):
+                    return self.repository.find_by_customer(customer)
+
+
+                [] car = Car({ "plate": "ABC1234" })
+                   customer = Customer({ "mobile_phone": "47 99155-5555" })
+
+                   repository = InMemoryJobRepository()
+                   notifier = EmailJobNotifier()
+                   service = CarWashService(repository, notifier)
+
+                []  job_id = service.enter_in_the_car_wash(car, customer)
+                    service.wash_completed(job_id)
+
+
+        </pre>
+
+        <h2>LSP - PRINCÍPIO DA SUBSTITUIÇÃO</h2>
+        <br>
+        <p>Este princípio determina que subclasses devem ser capazes de substituir totalmente as superclasses sem qualquer modificação no código.
+        De acordo com o princípio, subtipos devem ser substituíveis por supertipo, ou seja, métodos ou funções que usam tipo de superclasse devem ser capazes de trabalhar com o objeto da subclasse sem qualquer problema.
+        Este princípio está intimamente relacionado ao princípio de responsabilidade única e ao princípio de segregação de interface. Se uma superclasse tiver mais funcionalidade do que uma subclasse, talvez a subclasse não ofereça suporte a algumas das funcionalidades necessárias e viole o LSP.</p>
+        <p>No nosso exemplo anterior não conseguimos substituir o uso da classe dict por InMemoryJobRepository nem o contrário, violando este princípio.</p>      
+            <pre>
+
+                 []   class JobRepository:
+                    def put(self, job):
+                        raise NotImplementedError()
+                    
+                    def find_by_id(self, job_id):
+                        raise NotImplementedError()
+                    
+                    def find_by_customer(self, customer):
+                        raise NotImplementedError()
+                    
+                
+                class InMemoryJobRepository(JobRepository):
+                    def __init__(self):
+                        self.__storage = {}
+                        
+                    def put(self, job):
+                        self.__storage[job.id] = job
+                        return job.id
+                    
+                    def find_by_id(self, job_id):
+                        return self.__storage[job_id]
+                    
+                    def find_by_customer(self, customer):
+                        return [job for job in self.__storage.values() if job.has_customer(customer)]
+
+                    []car = Car({ "plate": "ABC1234" })
+                      customer = Customer({ "mobile_phone": "47 99155-5555" })
+                    
+                      repository = InMemoryJobRepository()
+                      notifier = EmailJobNotifier()
+                      service = CarWashService(repository, notifier)
+
+                    [] job_id = service.enter_in_the_car_wash(car, customer)
+                        service.wash_completed(job_id)
+
+
+            </pre>
+
+            <h2>PRINCÍPIO DA SEGREGAÇÃO DE INTERFACE</h2>
+            <p>Este princípio determina que uma entidade não deve implementar ou depender de uma interface que não usa. Isso acontece principalmente quando uma interface contém mais de uma funcionalidade, e o cliente precisa apenas de uma funcionalidade e não de outra. Este princípio está intimamente relacionado com o princípio da responsabilidade única.
+                Uma maneira de evitar violar este princípio em Python é aplicando duck typing. Esse conceito significa que os métodos e as propriedades de um objeto determinam sua validade semântica, em vez de sua hierarquia de classes ou a implementação de uma interface específica.</p>
+                <pre>
+
+                    []  class InMemoryJobRepository:
+                        def __init__(self):
+                            self.__storage = {}
+                            
+                        def put(self, job):
+                            self.__storage[job.id] = job
+                            return job.id
+                        
+                        def find_by_id(self, job_id):
+                            return self.__storage[job_id]
+                        
+                        def find_by_customer(self, customer):
+                            return [job for job in self.__storage.values() if job.has_customer(customer)]
+                        
+                     
+                    class SMSJobNotifier:
+                        def send(self, phone_number, message):
+                            print(f"Enviando mensagem de texto para o número {phone_number}:", message)
+                            
+                    
+                    class EmailJobNotifier:
+                        def send(self, email, message):
+                            print(f"Enviando mensagem para o e-mail {email}:", message)
+                            
+                    
+                    class CarWashJob:
+                        def __init__(self, car, customer):
+                            self.id = uuid.uuid4().hex
+                            self.car = car
+                            self.customer = customer
+                            
+                        def has_customer(self, customer):
+                            self.customer == customer
+                    
+                    
+                    class CarWashService:
+                        def __init__(self, repository, notifier):
+                            self.repository = repository
+                            self.notifier = notifier
+                            
+                        def enter_in_the_car_wash(self, car, customer):
+                            job = CarWashJob(car, customer)
+                            job_id = self.repository.put(job)
+                            return job_id
+                            
+                        def wash_completed(self, job_id):
+                            job = self.repository.find_by_id(job_id)
+                            self.notifier.send(job.customer.mobile_phone, f"Higienização do carro #{job.car.plate} finalizada.")
+                            
+                        def service_by_customer(self, customer):
+                            return self.repository.find_by_customer(customer)
+
+                        [] car = Car({ "plate": "ABC1234" })
+                            customer = Customer({ "mobile_phone": "47 99155-5555" })
+                            
+                            repository = InMemoryJobRepository()
+                            notifier = EmailJobNotifier()
+                            service = CarWashService(repository, notifier)
+
+                        []  job_id = service.enter_in_the_car_wash(car, customer)
+                            service.wash_completed(job_id)
+
+                        []
+
+
+                </pre>
+
+
+
+
+            </div>
+</body>
+</html>

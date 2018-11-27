@@ -1,0 +1,89 @@
+#primeiraImagem{
+   width: 100%;
+   height: 348px;
+   left: 0px;
+   top: 60px;
+}
+#titulo{
+    height: 90px;
+    top: 0;
+    text-align: center; 
+    color: black;  
+         
+     }
+#ïntroducao1{
+   position: relative;
+   height: 60px;
+   left: 30px;
+   top: 20px;
+
+}
+#links{
+   position: relative;
+   height: 170px;
+   left: 100px;
+   top: 40px;
+
+}
+#titulo2{
+    position: relative;
+    height: 90px;
+    left: 100px;
+    top: 20px;
+ 
+}
+#texto{
+   position: relative;
+   height: 160px;
+   left: 30px;
+   top: 0px;
+
+}
+#sumario{
+    position: relative;
+    height: 480px;
+    left: 70px;
+    top: 0px;
+}
+#Jupyter{
+    position: relative;
+    height: 400px;
+    left: 30px;
+    top: 0px;
+}
+#Markdown{
+    position: relative;
+    height: 90px;
+    left: 30px;
+    top: 0px;
+}
+#Extensões{
+    position: relative;
+    height: 160px;
+    left: 30px;
+    top: 0px;
+}
+#links2{
+    position: relative;
+    height: 90;
+    left: 30px;
+    top: 0px;
+}
+#Referências{
+    position: relative;
+    height: 160px;
+    left: 30px;
+    top: 0px;
+}
+#links3{
+    position: relative;
+    height: 90;
+    left: 30px;
+    top: 0px;
+}
+#MÓDULOS{
+    position: relative;
+    height: 160px;
+    left: 30px;
+    top: 0px;
+}

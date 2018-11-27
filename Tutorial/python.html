@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <title>Tutorial para aprender a programar em Python </title>
+    <link rel="stylesheet" href="bootstrap.min.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #033076">
+    <h3 class="navbar-brand" href="#">Python</h3>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://docs.python.org/3/" target="_blank">Material Complementar</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://pt.stackoverflow.com/questions/tagged/python" target="_blank">Duvidas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#contato">Contato</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button type="submit" class="btn btn-primary mb-2"style="background-color: #033076">Search</button>
+        </form>
+    </div>
+</nav>
+
+<a href="https://www.python.org/downloads/" target="_blank"></a>
+<img id="primeiraImagem"src="primeiraImagem.jpg" class="img-fluid" alt="Imagem responsiva">
+<div class="container">
+        <div class="row">
+        <div id="titulo">
+            <br>
+            <br>
+        <h1> APRENDENDO A PROGRAMAR EM PYTHON </h1>
+        <br>
+        </div>
+        <div id="ïntroducao1">
+        <p>Este arquivo que estamos usando para aprender a programar em Python é escrito usando a 
+             ferramenta Jupyter Lab. A vantagem de usar Jupyter Notebooks ao invés de arquivos de texto é 
+            que podemos misturar texto formatado, imagens, código Python e visualiar a saída do código executado
+             Além de executar o Jupyter Lab nas nossas máquinas, também podemos acessar os notebooks através de outras ferramentas como o Binder e o Google Colab
+        </p>
+        </div>
+        </div>
+        <div class="row">
+        <div id="links">
+            <h6><a href="#Jupyter">Jupyter</a></h6>
+            <h6><a href="#Markdown">Markdown</a></h6>
+            <h6><a href="#Referências">Referências</a></h6>
+            <h6><a href="#MÓDULOS">MÓDULOS</a></h6>
+            <h6><a href="#VARIÁVEIS">VARIÁVEIS</a></h6>
+            <h6><a href="#OPERADOR">OPERADORES DE COMPARAÇÃO</a></h6>
+            <h6><a href="#STRINGS">STRINGS</a></h6>
+            <h6><a href="#FUNÇÕES">FUNÇÕES</a></h6>
+
+
+
+        
+        </div>
+        </div>
+        <div class="row">
+        <div id="titulo2">
+            <h1>Por que Python?</h1>
+        </div>
+        <div id="texto">
+         <p>Python foi criada por Guido Van Rossum. Python é uma linguagem dinâmica de auto nível, 
+            multi-paradigmas, interpretada e intuitiva, utilizada em vários domínios de aplicação.
+            Sua popularidade deve-se principalmente a sua sintaxe limpa e legível, o que torna a linguagem de 
+            fácil utilização e possibilitando o rápido desenvolvimento de aplicações e protótipos. Por ser escrita em C, 
+            possibilita a fácil integração com bibliotecas escritas nesta linguagem para obter melhor desempenho. Possui 
+            também versões para as plataformas JVM e .NET através dos projetos Jython e IronPython.
+            linguagem recebe grande atenção da comunidade científica. Através de projetos como NumPy, SciPy, Tensorflow e Matplotlib, 
+            fornece uma coleção de bibliotecas e ferramentas de código aberto para computação científica nos mais diversos domínios.</p>
+        </div>
+        </div>
+        <div class="row">
+        <div id="sumario">
+            <h4>Pontos fortes:</h4>
+            <p> * Open Source</p>
+            <p>  * Propósito geral</p>
+            <p>* Simplicidade</p>
+            <p>* Multiplataforma</p>
+            <p>* Biblioteca de módulos</p>
+            <p>* Usada em diversas áreas</p>
+            <p>* Sistemas web</p>
+            <p>* Data science</p>
+            <p>* Engenharia</p>
+            <p>* Comunidade forte</p>
+            <p>Você pode acessar pelo site <a href=http://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop/">Wikipedia</a></p>
+        </div>
+        </div>
+        <div class="row">
+        <a name="Jupyter" id="Jupyter"><h3>Jupyter Lab</h3>
+        
+        <p>Podemos escrever código Python ou Markdown em células que avaliam o
+            código escrito e retornam o resultado de acordo com o formato esperado. O legal deste retorno é que ele é corretamente renderizado no notebook:</p>
+        <div id="Markdown">
+            <a name="Markdown" id="Markdown"></a><h3>Markdown</h3>
+            <p>Para aprender como usar o Markdown inspecione esta célula. Para se aprofundar no tema acesse esta <a href=https://colab.research.google.com/drive/www.markdownguide.orghttps://colab.research.google.com/drive/www.markdownguide./">Documentacao</a></p>
+        </div>
+        <a name="Extensões" id="Extensões"><h3>Extensões</h3>
+            <p>Podemos instalar extensões para deixar os Jupyter Notebooks mais poderosos:</p>
+        <div id="links2">
+            <p><a href=https://colab.research.google.com/drive/ipywidgets.readthedocs.iohttps://colab.research.google.com/drive/ipywidgets.readthedocs.i/">ipywidgets.readthedocs.io</a></p>
+            <p><a href="https://github.com/jupyter-widgets/ipywidgets/tree/master/docs/source/examples/">https://github.com/jupyter-widgets/ipywidgets/tree/master/docs/source/examples</a></p>
+        </div>
+        </div>
+            <a name="Referências" id="Referências"><h3>Referências</h3></a>
+            <p>A linguagem Python é muito bem documentada. Para conhecer mais acesse as documentações oficiais:</p>
+            <p><a href="https://colab.research.google.com/drive/ipywidgets.readthedocs.io"> Referência da linguagem Python</a></p>
+            <p><a href="https://docs.python.org/3.7/library/">The Python Standard Library</a></p>
+        
+           <div class="row">
+          <a name="MÓDULOS" id="MÓDULOS"><h3>MÓDULOS</h3>
+            A maior parte da funcionalidade do Python é fornecida pelos seus módulos. A biblioteca padrão do Python é uma grande coleção de módulos que fornece implementações 
+            recursos comuns, como acesso ao sistema operacional, I/O de arquivos, estruturas de dados, servidores web, comunicação de rede e muito mais.
+            Para usar um módulo em Python ele precisa ser importado. Deve ser feito usando a declaração de importação. Por exemplo, para importar o módulo
+            math que contém muitas funções matemáticas padrão, podemos fazer:
+            <br>
+        
+        <div id="exemplo1">
+               [ ]import math<br>
+                1.List item<br>
+                2.lis intem<br>
+                <br>
+               [ ]<br>
+                Isso inclui todo o módulo e o disponibiliza para uso no programa<br>
+               [ ]import maths<br>
+                x = math.cos(2 * math.pi)<br>
+                x<br>
+                <br>
+                Como alternativa, podemos importar todas funções e variáveis de um módulo para o espaço de nomes atual. Dessa forma, não precisemos usar o prefixo math sempre que usarmos algo do módulo:<br>
+                <br>
+                [ ] from math import *<br>
+                x = cos(2 * pi)<br>
+                x<br>
+                <br>
+                <p>Esse padrão pode ser muito conveniente, mas em programas grandes que incluem muitos módulos, geralmente é uma boa ideia manter as funções, constantes e variáveis de cada módulo em seus próprios espaços de nomes, usando o padrão import math. Isso elimina problemas confusos com colisões de nomes.
+                Como uma terceira alternativa, podemos optar por importar apenas alguns símbolos selecionados de um módulo, listando explicitamente quais queremos importar, em vez de usar o curinga *:</p>
+                <br>
+                from math import cos, pi <br>
+                x = cos(2 * pi)<br>
+                x<br>
+                <br>
+                <a name="VARIÁVEIS" id="VARIÁVEIS"></a><h3>VARIÁVEIS</h3>
+                <p>Os nomes de variáveis em Python podem conter caracteres alfanuméricos a-z, A-Z, 0-9 e alguns caracteres especiais, como _. Os nomes das variáveis devem começar com uma 
+                letra. Por convenção, os nomes das variáveis começam com uma letra minúscula e os nomes das classes começam com uma letra maiúscula. Além disso, há várias palavras-chave do Python que não podem ser usadas como nomes de variáveis. Essas palavras-chave são:</p><br>
+                
+                and, as, assert, break, class, continue, def, del, elif, else, except, <br>
+                exec, finally, for, from, global, if, import, in, is, lambda, not, or,<br>
+                pass, print, raise, return, try, while, with, yield<br>
+                <br>
+                <p>O operador de atribuição no Python é =. O Python é uma linguagem com tipagem dinâmica. Dessa forma não precisamos especificar o tipo de uma variável quando criamos uma.<br>
+                  Indented bloco Criando uma variável:</p>
+                  x = 1.0<br>
+                  print(x)<br>
+                  <br>
+                  Se tentarmos usar uma variável que ainda não tenha sido definida, obteremos uma exceção do tipo NameError:<br>
+                  List item <br>
+                  List item <br>
+                  [ ]print(y)<br>
+                  <br>
+                  <a name="TIPOS" id="TIPOS"></a><h3>TIPOS</h3>
+                  <p>Embora não seja explicitamente especificado, uma variável tem um tipo associado a ela. O tipo é derivado do valor que foi designado a ele. Podemos verificar o tipo de uma variável com a função type: </p>
+                  x = 1<br>
+                  type(x)<br>
+                  <br>
+                  <p>Python possui os tipos fundamentais inteiros, ponto flutuante, booleanos e complexos:</p>
+                 [ ] x = 1.0<br>
+                 [ ] print(x, type(x))<br>
+                 [ ]x = True<br>
+                 [ ]print(x, type(x))<br>
+                 [ ] # números complexos: observe o uso de j para especificar a parte imaginária<br>
+                 [ ]x = 1.0 - 1.0j<br>
+                 [ ]print(x, type(x))<br>
+                 [ ]print(x.real, x.imag)<br>
+                 <br>
+                 <br>
+        
+            </div>
+           
+            <div id="operador">
+            <a name="OPERADOR" id="OPERADOR"></a><h3>OPERADORES DE COMPARAÇÃO</h3>
+            <p>A maioria dos operadores de comparação no Python funcionam como em outras linguagens:</p>
+            </div>
+            <pre>
+                    > maior que
+                    < menor que
+                    >= maior ou igual que
+                    <= menor ou igual que
+                    == igual
+                    != diferente
+                    is é, comparação de objetos
+
+
+Ao tentarmos comparar valores de tipos diferentes, caso não seja possível fazer o cast dos valores, iremos obter TypeError:
+                    []1 < "string"
+                
+ Dado que os operadores de comparação são avaliados como True ou False, podemos usar eles em conjunto com os operadores booleanos:
+
+                    [] x = 3
+                      x > 2 and x < 4
+
+                    []x = 3
+                      x == 2 or x == 4
+
+            </pre>
+            <a name="STRINGS" id="STRINGS"></a><h3>STRINGS</h3>
+            <p>Strings são o tipo de variável usado para armazenar mensagens de texto. A linguagem Python possui um conjunto muito
+                 rico de funções para processamento de texto. Consulte a documentação da linguagem para mais detalhes.</p>
+
+                <pre>
+
+                    [] s = "Olá, mundo!"
+                        type(s)
+                        
+                        Podemos obter o comprimento da string (o número de caracteres) usando:
+                        
+                    [] len(s)
+                        
+                        Para substituir uma substring em uma string por outro valor use replace:
+                        
+                    [] s2 = s.replace("mundo", "sol")
+                        print(s2)
+                        
+                        Podemos acessar um caractere no seu índice em uma string usando [].
+                        
+                    [] s[0], s[4], s[10]
+                        
+                        Em Python podemos usar índices reversos para buscar caracteres em strings de trás para frente:
+                        
+                    [] s[-1]
+                        
+                        Podemos extrair uma parte de uma string usando a sintaxe [começo:fim], que extrai caracteres entre o início do índice, começo e o fim. O começo é inclusivo e o fim exclusivo.
+                        
+                    [] s[0:5]
+                        
+                    [] s[2:3]
+                        
+                        Se omitirmos começo o padrão é o começo da string, e se omitirmos fim o padrão será o fim da string. Se omitirmos os dois, será do começo ao fim.
+                                                
+                    [] s[:5]
+                                                
+                    [] s[5:]
+                        
+                    [] s[:]
+                        
+                        Também podemos definir o tamanho do passo usando a sintaxe [começo:fim:passo]. O valor padrão para passo é 1.
+                                                
+                    [] s[::1]
+                        
+                        Com o valor do passo sendo 2:
+                                                
+                    [] s[::2]
+                
+                </pre>
+        
+         <a name="CLASSE" id="CLASSE"></a><h3>CLASSE</h3>
+         <P>As classes são os principais recursos da programação orientada a objetos. Uma classe é uma estrutura para representar um objeto e as operações que podem ser executadas no objeto.
+
+                No Python, uma classe pode conter atributos (variáveis) e métodos (funções).
+                
+                Uma classe é definida usando a palavra-chave class, e a definição de classe geralmente contém um número de definições de método de classe (uma função em uma classe).
+                
+                Cada método de classe deve ter um argumento self como seu primeiro argumento. Este parâmetro é uma auto-referência ao objeto.
+                
+                Alguns nomes de método de classe têm um significado especial, como por exemplo:</P>
+
+        <pre>
+             * `__init__`: O nome do método que é invocado quando o objeto é criado pela primeira vez.
+             * `__str__`: Um método que é invocado quando é necessária uma representação em string da classe, como por exemplo, quando impressa.
+
+             A seguir definiremos nossa primeira classe para representar um ponto em um sistema de coordenadas dcartesianas:
+             class Ponto:
+             """
+             Classe simples para representar um ponto em um sistema de coordenadas cartesianas.
+             """
+                
+            []def __init__(self, x, y):
+                    """
+                    Cria um novo Ponto em x, y.
+                    """
+                    self.x = x
+                    self.y = y
+                    
+                def translate(self, dx, dy):
+                    """
+                    Faz uma translação do ponto por dx e dy no sentido x e y.
+                    """
+                    self.x += dx
+                    self.y += dy
+                    
+                def __str__(self):
+                    return(f"Ponto em ({self.x}, {self.y})")
+            
+            Ao criar uma nova instância da classe o método especial `__init__` é invocado:
+            
+            [] ponto1 = Ponto(0, 0)
+            
+            Ao passar o objeto `ponto1` como parâmetro para a função `print` o método `__str__` do objeto `ponto1` é invocado:
+            
+            [] print(ponto1)
+            
+            Podemos chamar um método (`translate`) do objeto `ponto1`. Os métodos vão alterar os atributos internos dos objetos:
+            
+            ponto1 = Ponto(1, 1)
+            print(ponto1)
+            ponto1.translate(0.25, 1.5)
+            print(ponto1)
+        </pre>
+        <p>Observe que ao chamar métodos modificamos o estado interno das instâncias da classe específica.
+          Essa é uma das coisas boas do design de software Orientado a Objetos: códigos como funções e variáveis relacionadas são agrupados em entidades separadas e independentes. Por curiosidade</p>
+        <br>
+        <br>
+        <br>
+        <a name="FUNÇÕES" id="FUNÇÕES"></a><h3>FUNÇÕES</h3>
+        <pre>
+            
+            Uma função em Python é definida usando a palavra-chave `def`, seguida pelo nome da função, e os parâmetros entre parênteses `()` e dois pontos `:`. O código a seguir, com um nível adicional de indentação, é o corpo da função.
+
+                
+            [] def nome_da_funcao(parametro):
+                    expressão
+                    return valor
+                
+                
+            [] def funcao():   
+                    print("teste")
+                
+            [] funcao()
+                
+            Opcionalmente, mas altamente recomendado, podemos definir uma documentação descritiva para a função usando o docstring, que é uma descrição do propósito e comportamento das funções. 
+            A docstring deve seguir diretamente após a definição da função, antes do código no corpo da função.
+                
+            [] def funcao(parametro):
+                    """
+                    Imprima uma string 'parametro' e diga quantos caracteres ela possui
+                    """
+                    print(f"'{parametro}' tem {len(parametro)} carateres")
+                
+            [] help(funcao)
+                
+            [] funcao("teste")
+                
+             Quando deseja-se que uma função retorne um valor usamos a palavra `return`:
+                
+            [] def quadrado(parametro):
+                    """
+                    Returna parametro ao quadrado
+                    """
+                    return parametro ** 2
+                
+            [] quadrado(4)
+                
+            Podemos retornar vários valores de uma função usando tuplas:
+                
+            [] def elevados(parametro):
+                    """
+                    Returna parametro elevado à vários números
+                    """
+                    return parametro ** 2, parametro ** 3, parametro ** 4
+                
+            [] elevados(3)
+                
+                    x2, x3, x4 = elevados(3)
+                
+                    print(x3) 
+
+        </pre>
+
+
+
+
+</div>
+</body>
+</html>

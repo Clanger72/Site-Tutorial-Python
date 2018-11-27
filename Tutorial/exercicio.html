@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <title>Tutorial para aprender a programar em Python </title>
+    <link rel="stylesheet" href="bootstrap.min.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #033076">
+    <h3 class="navbar-brand" href="#">Python</h3>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://docs.python.org/3/" target="_blank">Material Complementar</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://pt.stackoverflow.com/questions/tagged/python" target="_blank">Duvidas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#contato">Contato</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button type="submit" class="btn btn-primary mb-2"style="background-color: #033076">Search</button>
+        </form>
+    </div>
+</nav>
+
+<a href="https://www.python.org/downloads/" target="_blank"></a>
+<img id="primeiraImagem"src="primeiraImagem.jpg" class="img-fluid" alt="Imagem responsiva">
+<div class="container">
+    <br>
+    <br>
+        <div class="row">
+        <h1>EXERCICIOS</h1>
+        <br>
+        <br>
+        <div id="ex">
+        <p><h5>Exercício 1:</h5> faça um algoritmo que solicite ao usuário números e os armazene em um vetor de 30 posições. Crie uma função que recebe o vetor preenchido e substitua todas as ocorrência de valores positivos por 1 e todos os valores negativos por 0.</p>
+        <p><h5>Exercício 2: </h5>crie uma função que retorne o valor da expressão: 2/3 + 3/5 + 4/7 + 5/9 + … + n/m, para um valor de n definido pelo usuário. Verifique se o valor de n definido pelo usuário é positivo e, caso não seja, solicite outro valor até ser fornecido um valor positivo.</p>
+        <p><h5>Exercício 3:</h5> Faça um algoritmo que solicite ao usuário números e os armazene em um vetor de 20 posições. Crie uma função que recebe o vetor preenchido e substitua todas as ocorrências de valores negativos por zero, as ocorrências de valores menores do que 10 por 1 e as demais ocorrências por 2.</p>
+        <p><h5>Exercício 4:</h5> crie um algoritmo que solicite 3 valores que representarão os lados de um triângulo. Considere que não importa a ordem que serão fornecidos os valores, podendo ser fornecido primeiro a hipotenusa e depois os catetos, ou primeiro os catetos e depois a hipotenusa, etc. Crie também uma função que recebe o vetor e retorna se os lados informados formam um triângulo retângulo. Você pode utilizar o teorema de Pitágoras para auxiliar na resolução: hiponusa2 = cateto12 + cateto22.</p>
+        <p><h5>Exercício 5: </h5>faça um algoritmo que solicite ao usuário números e os armazene em uma matriz 6×6. Em seguida, crie um vetor que armazene os elementos da diagonal principal da matriz.</p>
+        <p><h5>Exercício 6:<h5></h5> tendo uma matriz 10×10 preenchida com valores aleatórios entre 10 e 50, mostre a média dos elementos da diagonal secundária.</p>
+        <br>
+        <br>
+        <h2>Respostas</h2>
+        
+        <pre>
+
+
+
+                1 def troca(vet):
+                for i in range(3):
+                    if vet[i] &gt;= 0:
+                        vet[i] = 1
+                    else:
+                        vet[i] = 0
+                return vet
+             
+            vet = [0]*3
+            for i in range(3):
+                vet[i] = input('Digite um valor: ')
+            print vet
+            troca(vet)
+            print vet
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+               
+              2 def sequ(n):
+               aux1 = 2
+               aux2 = 3.0
+               soma = 0
+            
+               while aux1 &lt;= num:
+                   print aux1, aux2
+                   soma = soma + aux1/aux2
+                   aux1 = aux1 + 1
+                   aux2 = aux2 + 2
+            
+               return soma
+            
+           num = input('Digite um valor: ')
+           while num &lt; 0:
+               num = input('Digite um valor positivo: ')
+            
+           res = sequ(num)
+           print res
+
+ -------------------------------------------------------------------------------------------------------------------------------------
+
+              
+               3  def altera(vet, tam):
+               for i in range(tam):
+                   if vet[i] &lt; 0:
+                       vet[i] = 0
+                   elif vet[i] &lt; 10:
+                       vet[i] = 1
+                   else:
+                       v[i] = 2
+               return vet
+            
+           tam = 39
+            
+           v = [0]*tam
+           for i in range(tam):
+               v[i] = input('Digite um valor: ')
+           altera(v,tam)
+           print v
+
+ -------------------------------------------------------------------------------------------------------------------------------------
+
+
+               4 import math
+ 
+               def triangret(vet):
+                   if vet[0] &gt; vet[1] and vet[0] &gt; vet[2]:
+                       hip = vet[0]
+                       cat1 = vet[1]
+                       cat2 = vet[2]
+                   elif vet[1] &gt; vet[0] and vet[1] &gt; vet[2]:
+                       hip = vet[1]
+                       cat1 = vet[0]
+                       cat2 = vet[2]
+                   else:
+                       hip = vet[2]
+                       cat1 = vet[0]
+                       cat2 = vet[1]
+                   print hip, cat1, cat2
+                
+                   if hip == math.sqrt(cat1**2 + cat2**2):
+                       return 1
+                   else:
+                       return 0
+                
+               vet = [0]*3
+               for i in range(3):
+                   vet[i] = input('Digite um valor: ')
+                
+               if triangret(vet) == 1:
+                   print 'É retangulo'
+               else:
+                   print 'Não é retangulo'
+
+  -------------------------------------------------------------------------------------------------------------------------------------
+            
+                5 vet = [0]*6
+                mat = [0]*6
+                for x in range(6):
+                    mat[x] = [0]*6
+                 
+                for lin in range(6):
+                    for col in range(6):
+                        mat[lin][col] = input('Digite um valor: ')
+                print mat
+                 
+                for lin in range(6):
+                    for col in range(6):
+                        print lin,col
+                        if lin == col:
+                            print 'DP', lin, col
+                            vet[lin] = mat[lin][col]
+                print vet
+
+ -------------------------------------------------------------------------------------------------------------------------------------
+                
+                6 import random
+ 
+                tam = 10
+                m = [0]*tam
+                for i in range(tam):
+                    m[i] = [0]*tam
+                for i in range(tam):
+                    for j in range(tam):
+                        m[i][j] = random.randint(10,50)
+                 
+                aux = tam-1
+                soma = 0
+                 
+                for i in range(tam):
+                    soma = soma + m[i][aux]
+                    aux = aux - 1
+                 
+                for i in range(tam):
+                    print m[i][:]
+                print 'Média: ', soma/float(tam)
+  -------------------------------------------------------------------------------------------------------------------------------------
+
+        </pre>
+
+
+        <div>
+
+
+    </div>
+
+
+</div>
+</body>
+</html>
